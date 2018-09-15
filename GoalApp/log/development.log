@@ -1,0 +1,2108 @@
+  [1m[35m (573.3ms)[0m  [1m[35mCREATE DATABASE "GoalApp_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (266.5ms)[0m  [1m[35mCREATE DATABASE "GoalApp_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (361.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (22.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (30.9ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3326608677441972405)[0m
+  ↳ bin/rails:9
+  [1m[35m (9.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20180914181915)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (107.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL)[0m
+  ↳ db/migrate/20180914181915_create_users.rb:3
+  [1m[35m (33.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_username" ON "users"  ("username")[0m
+  ↳ db/migrate/20180914181915_create_users.rb:8
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_session_token" ON "users"  ("session_token")[0m
+  ↳ db/migrate/20180914181915_create_users.rb:9
+  [1m[36mActiveRecord::SchemaMigration Create (63.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180914181915"]]
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (14.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (12.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-09-14 18:23:46.152094"], ["updated_at", "2018-09-14 18:23:46.152094"]]
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(3326608677441972405)[0m
+  ↳ bin/rails:9
+  [1m[35m (18.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/cats" for 127.0.0.1 at 2018-09-14 12:10:53 -0700
+  [1m[35m (11.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/var/rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (No route matches [GET] "/cats"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/users/new" for 127.0.0.1 at 2018-09-14 12:10:57 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 599ms (Views: 578.9ms | ActiveRecord: 12.3ms)
+
+
+Started GET "/cats" for 127.0.0.1 at 2018-09-14 14:30:11 -0700
+  [1m[35m (19.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/var/rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (No route matches [GET] "/cats"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/users/new" for 127.0.0.1 at 2018-09-14 14:30:14 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+Completed 200 OK in 455ms (Views: 374.1ms | ActiveRecord: 13.7ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-09-14 14:30:23 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"EOkDadbPOfkVl0aZUeEtk/ykpZg298M/XZfRYEatKpdSqe9xpJMqDOYYY6nuQ40/Yte9dtC6pXXCPlTciL37FA==", "user"=>{"username"=>"parkg748", "password"=>"[FILTERED]"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Create (1.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "parkg748"], ["password_digest", "$2a$10$u5GuobRwkBP44NYSsBV7c.ayEXF2DJUSduWL5dC8pmLzfjMJi6tQ6"], ["session_token", "BpbnKqU3XSWc_l_7ZfPZrA"]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (17.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 98ms (ActiveRecord: 18.7ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-09-14 14:30:24 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+Completed 200 OK in 54ms (Views: 35.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-09-14 14:33:14 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 129ms (Views: 86.0ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-09-14 14:34:36 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 32ms (Views: 29.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-09-14 14:35:20 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 151ms (Views: 109.0ms | ActiveRecord: 7.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-09-14 14:35:30 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"EOkDadbPOfkVl0aZUeEtk/ykpZg298M/XZfRYEatKpdSqe9xpJMqDOYYY6nuQ40/Yte9dtC6pXXCPlTciL37FA==", "user"=>{"username"=>"parkg748", "password"=>"[FILTERED]"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Create (28.0ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "parkg748"], ["password_digest", "$2a$10$GJe1LAw966igaBRN6U2H4uZENAfzOD/HJKg8MsdySlnUi3rQDghZO"], ["session_token", "IkQoQwLsXbcp3xw2gXRU9w"]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:9
+Completed 500 Internal Server Error in 106ms (ActiveRecord: 28.6ms)
+
+
+
+PG::UniqueViolation - ERROR:  duplicate key value violates unique constraint "index_users_on_username"
+DETAIL:  Key (username)=(parkg748) already exists.
+:
+  app/controllers/users_controller.rb:9:in `create'
+
+Started POST "/__better_errors/a7ea091a72de80fd/variables" for 127.0.0.1 at 2018-09-14 14:35:31 -0700
+Started POST "/users" for 127.0.0.1 at 2018-09-14 14:35:41 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"EOkDadbPOfkVl0aZUeEtk/ykpZg298M/XZfRYEatKpdSqe9xpJMqDOYYY6nuQ40/Yte9dtC6pXXCPlTciL37FA==", "user"=>{"username"=>"parkg7482", "password"=>"[FILTERED]"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "parkg7482"], ["password_digest", "$2a$10$ypvF/P0q2t4ihTKQaTYOD.T6qUH3KjAY0eE.7jSWBiTkQmhL.Q/uq"], ["session_token", "lqgX19uEJOWZRjqKBKkNTg"]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:27
+  [1m[36mUser Update (55.3ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1 WHERE "users"."id" = $2[0m  [["session_token", "PNzeBLiJNd5bbewEOtwfQw"], ["id", 3]]
+  ↳ app/models/user.rb:27
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:27
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 140ms (ActiveRecord: 57.6ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2018-09-14 14:35:41 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PNzeBLiJNd5bbewEOtwfQw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 132ms (Views: 129.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/cats" for 127.0.0.1 at 2018-09-14 14:41:05 -0700
+  [1m[35m (16.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/var/rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (No route matches [GET] "/cats"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/users/new" for 127.0.0.1 at 2018-09-14 14:41:07 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PNzeBLiJNd5bbewEOtwfQw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 437ms (Views: 381.0ms | ActiveRecord: 13.4ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-09-14 14:41:14 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"RYKUyoCQ8HF7wiMh5pCG6hu7Kc1Q0M/O680RJk/7+mgHwnjS8szjhIhNBhFZMiZGhcgxI7adqYR0ZJSagesr6w==", "user"=>{"username"=>"grace", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "grace"], ["password_digest", "$2a$10$JAXCK0JU/d6IjqwqUnpJU.R0zGsQdpEwL6Ge2kOgsBYBBPeyUH8ES"], ["session_token", "T7j5kNrfYI7vzNzev9vW5w"]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (28.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:27
+  [1m[36mUser Update (0.9ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1 WHERE "users"."id" = $2[0m  [["session_token", "sjymPbcVpbdUWawH5PnrYQ"], ["id", 4]]
+  ↳ app/models/user.rb:27
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:27
+Redirected to http://localhost:3000/users/4
+Completed 302 Found in 114ms (ActiveRecord: 30.7ms)
+
+
+Started GET "/users/4" for 127.0.0.1 at 2018-09-14 14:41:14 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "sjymPbcVpbdUWawH5PnrYQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 26ms (Views: 22.7ms | ActiveRecord: 0.9ms)
+
+
+Started DELETE "/session" for 127.0.0.1 at 2018-09-14 14:41:16 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"il/KdySSxjLWU4bGiUXUhL2pCwXB0GHQPvIzL7quTtrIHyZvVs7VxyXco/Y253QoI9oT6yedB5qhW7aTdL6fWQ=="}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "sjymPbcVpbdUWawH5PnrYQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:27
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1 WHERE "users"."id" = $2[0m  [["session_token", "q0yFADHkg0FPCCsS8wsggA"], ["id", 4]]
+  ↳ app/models/user.rb:27
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:27
+Redirected to http://localhost:3000/session/new
+Completed 302 Found in 6ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/session/new" for 127.0.0.1 at 2018-09-14 14:41:16 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 29ms (Views: 27.0ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-09-14 14:41:25 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"nKrfSOXnV1ulKsCRcLoC0IDLDyOOJQah9abjRkZkpEve6jNQl7tErlal5aHPGKJ8HrgXzWhoYOtqD2b6iHR1yA==", "user"=>{"username"=>"grace", "password"=>"[FILTERED]"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Create (51.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "grace"], ["password_digest", "$2a$10$JaEsDZ2tZcb20FfbONf5H.JstEJEC0qb.LAZKjbcGUVVXys5Uvdj6"], ["session_token", "y8g3lEOVpVv4niUjC1qMwg"]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:9
+Completed 500 Internal Server Error in 131ms (ActiveRecord: 52.5ms)
+
+
+
+PG::UniqueViolation - ERROR:  duplicate key value violates unique constraint "index_users_on_username"
+DETAIL:  Key (username)=(grace) already exists.
+:
+  app/controllers/users_controller.rb:9:in `create'
+
+Started POST "/__better_errors/eacd92157d018842/variables" for 127.0.0.1 at 2018-09-14 14:41:25 -0700
+Started GET "/cats" for 127.0.0.1 at 2018-09-14 14:59:26 -0700
+  [1m[35m (13.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/var/rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (No route matches [GET] "/cats"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/users/new" for 127.0.0.1 at 2018-09-14 14:59:28 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 324ms (Views: 303.9ms | ActiveRecord: 12.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-09-14 14:59:35 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/sessions/new"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/session/new" for 127.0.0.1 at 2018-09-14 14:59:41 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 98ms (Views: 96.0ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2018-09-14 14:59:46 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"tA7dHZy1va/GcWurqDLH9CH4VrPWIjtH8KJvdZ0tJ7v2TjEF7umuWjX+TpsXkGdYv4tOXTBvXQ1vC+rJUz32OA==", "user"=>{"username"=>"parkg748", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "parkg748"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:8
+Redirected to http://localhost:3000/session/new
+Completed 302 Found in 84ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/session/new" for 127.0.0.1 at 2018-09-14 14:59:46 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 24ms (Views: 22.9ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2018-09-14 14:59:48 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"gMAJp2Bz3ecknXF8cm1uxaMFiI0YxWlwJYnCJCGmQuLCgOW/Ei/OEtcSVEzNz85pPXaQY/6IDzq6IEeY77aTYQ==", "user"=>{"username"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/models/user.rb:8
+Redirected to http://localhost:3000/session/new
+Completed 302 Found in 4ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/session/new" for 127.0.0.1 at 2018-09-14 14:59:48 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 25ms (Views: 23.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-09-14 14:59:58 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 34ms (Views: 30.2ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-09-14 15:00:04 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"HmbVrkvnCmNgCGmPdkqoCIYO10wYoSCK09NA+lo8hbdcJjm2ObsZlpOHTL/J6AikGH3Pov7sRsBMesVGlCxUNA==", "user"=>{"username"=>"parkg748", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Create (42.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "parkg748"], ["password_digest", "$2a$10$CRCC4axrHf7zIMPOoxOOqulZpXSIGQuiizojamBXJe3CDJXRXRzRK"], ["session_token", "t7tZSn_LsN9KmLIQXeIrGQ"]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:9
+Completed 500 Internal Server Error in 124ms (ActiveRecord: 42.5ms)
+
+
+
+PG::UniqueViolation - ERROR:  duplicate key value violates unique constraint "index_users_on_username"
+DETAIL:  Key (username)=(parkg748) already exists.
+:
+  app/controllers/users_controller.rb:9:in `create'
+
+Started POST "/__better_errors/6885f480130f18ea/variables" for 127.0.0.1 at 2018-09-14 15:00:05 -0700
+Started POST "/session" for 127.0.0.1 at 2018-09-14 15:00:15 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"ctP17fGYSWMz8Ji6hKBdYgg05n5WGyNhKZDxIXxMSMAwkxn1g8RalsB/vYo7Av3Olkf+kLBWRSu2OXSdslyZQw==", "user"=>{"username"=>"parkg748", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "parkg748"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:8
+Redirected to http://localhost:3000/session/new
+Completed 302 Found in 82ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/session/new" for 127.0.0.1 at 2018-09-14 15:00:15 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 86ms (Views: 84.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/session/new" for 127.0.0.1 at 2018-09-14 15:01:08 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 56ms (Views: 33.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/session/new" for 127.0.0.1 at 2018-09-14 15:01:13 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 38ms (Views: 36.3ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2018-09-14 15:01:23 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"vs6jevVXAFszTmfLvK3TYKAANxxbQoEX0aeWltblIrn8jk9ihwsTrsDBQvsDD3PMPnMv8r0P511ODhMqGPXzOg==", "user"=>{"username"=>"pakg748", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "pakg748"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:8
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "parkg748"], ["LIMIT", 1]]
+  ↳ (byebug):1
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "parkg748"], ["LIMIT", 1]]
+  ↳ (byebug):1
+Redirected to http://localhost:3000/session/new
+Completed 302 Found in 169985ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/session/new" for 127.0.0.1 at 2018-09-14 15:04:13 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 45ms (Views: 42.0ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2018-09-14 15:04:21 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"5SR1u2KQDywnPBqIeKlcmmTe9N7xYpzIhU3ISe2V7qWnZJmjEMwc2dSzP7jHC/w2+q3sMBcv+oIa5E31I4U/Jg==", "user"=>{"username"=>"parkg748", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "parkg748"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:8
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:27
+Started POST "/session" for 127.0.0.1 at 2018-09-14 15:04:34 -0700
+Started POST "/session" for 127.0.0.1 at 2018-09-14 15:04:34 -0700
+  [1m[36mUser Update (2.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1 WHERE "users"."id" = $2[0m  [["session_token", "WNUiLvmP6vrpzJfz3q-3Cg"], ["id", 1]]
+  ↳ app/models/user.rb:27
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"5SR1u2KQDywnPBqIeKlcmmTe9N7xYpzIhU3ISe2V7qWnZJmjEMwc2dSzP7jHC/w2+q3sMBcv+oIa5E31I4U/Jg==", "user"=>{"username"=>"parkg748", "password"=>"[FILTERED]"}}
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:27
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "parkg748"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/1
+  ↳ app/models/user.rb:8
+Completed 302 Found in 12658ms (ActiveRecord: 6.9ms)
+
+
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:27
+  [1m[36mUser Update (1.2ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1 WHERE "users"."id" = $2[0m  [["session_token", "OCWD4-WzqJhJi78glnWzuQ"], ["id", 1]]
+  ↳ app/models/user.rb:27
+  [1m[35m (44.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:27
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 3116ms (ActiveRecord: 47.2ms)
+
+
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"5SR1u2KQDywnPBqIeKlcmmTe9N7xYpzIhU3ISe2V7qWnZJmjEMwc2dSzP7jHC/w2+q3sMBcv+oIa5E31I4U/Jg==", "user"=>{"username"=>"parkg748", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "parkg748"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:8
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:27
+  [1m[36mUser Update (1.0ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1 WHERE "users"."id" = $2[0m  [["session_token", "9nPSqKgYxFH8tTQVTt5N1Q"], ["id", 1]]
+  ↳ app/models/user.rb:27
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:27
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 2249ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-09-14 15:04:39 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "9nPSqKgYxFH8tTQVTt5N1Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 37ms (Views: 32.3ms | ActiveRecord: 1.5ms)
+
+
+Started DELETE "/session" for 127.0.0.1 at 2018-09-14 15:04:56 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"qFYAphzIzOD/TWk6f47YwfNredkFVMGq0wMIUd8X8mHqFuy+bpTfFQzCTArALHhtbRhhN+MZp+BMqo3tEQcj4g=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "9nPSqKgYxFH8tTQVTt5N1Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:27
+  [1m[36mUser Update (0.7ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1 WHERE "users"."id" = $2[0m  [["session_token", "vf8EWKJH_PRlUbZvG3tYOw"], ["id", 1]]
+  ↳ app/models/user.rb:27
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:27
+Redirected to http://localhost:3000/session/new
+Completed 302 Found in 46ms (ActiveRecord: 14.2ms)
+
+
+Started GET "/session/new" for 127.0.0.1 at 2018-09-14 15:04:56 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 87ms (Views: 85.2ms | ActiveRecord: 0.8ms)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3326608677441972405)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateGoals (20180914221734)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (8.5ms)[0m  [1m[35mCREATE TABLE "goals" ("id" bigserial primary key, "list_of_goal" character varying NOT NULL)[0m
+  ↳ db/migrate/20180914221734_create_goals.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180914221734"]]
+  ↳ bin/rails:9
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(3326608677441972405)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3326608677441972405)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddColumnToGoals (20180914222847)
+  [1m[35m (46.9ms)[0m  [1m[35mCREATE  INDEX  "index_goals_on_user_id" ON "goals"  ("user_id")[0m
+  ↳ db/migrate/20180914222847_add_column_to_goals.rb:5
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE  INDEX  "index_goals_on_user_id" ON "goals"  ("user_id")[0m
+  ↳ db/migrate/20180914222847_add_column_to_goals.rb:5
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(3326608677441972405)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3326608677441972405)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddColumnToGoals (20180914222847)
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE  INDEX  "index_goals_on_user_id" ON "goals"  ("user_id")[0m
+  ↳ db/migrate/20180914222847_add_column_to_goals.rb:5
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_goals_on_user_id" ON "goals"  ("user_id")[0m
+  ↳ db/migrate/20180914222847_add_column_to_goals.rb:5
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(3326608677441972405)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3326608677441972405)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddColumnToGoals (20180914222847)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (73.1ms)[0m  [1m[35mALTER TABLE "goals" ADD "user_id" integer NOT NULL[0m
+  ↳ db/migrate/20180914222847_add_column_to_goals.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180914222847"]]
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3326608677441972405)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/users" for 127.0.0.1 at 2018-09-14 15:40:56 -0700
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/var/rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+
+AbstractController::ActionNotFound - The action 'index' could not be found for UsersController:
+
+Started POST "/__better_errors/7cedc355c6bcb4bb/variables" for 127.0.0.1 at 2018-09-14 15:40:57 -0700
+Started GET "/sessions/new" for 127.0.0.1 at 2018-09-14 15:41:03 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/sessions/new"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/session/new" for 127.0.0.1 at 2018-09-14 15:41:11 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 486ms (Views: 378.7ms | ActiveRecord: 10.4ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2018-09-14 15:41:17 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"dM2G6CguAT05h8UBgDWR0vxQkgtyCQEfNVbDyM3nXTw2jWrwWnISyMoI4DE/lzF+YiOK5ZREZ1Wq/0Z0A/eMvw==", "user"=>{"username"=>"parkg748", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "parkg748"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:8
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:27
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1 WHERE "users"."id" = $2[0m  [["session_token", "D7ooCPo7OuFNXTenUks4og"], ["id", 1]]
+  ↳ app/models/user.rb:27
+  [1m[35m (24.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:27
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 131ms (ActiveRecord: 26.7ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-09-14 15:41:17 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "D7ooCPo7OuFNXTenUks4og"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 44ms (Views: 40.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/goals/new" for 127.0.0.1 at 2018-09-14 15:41:19 -0700
+Processing by GoalsController#new as HTML
+  Rendering goals/new.html.erb within layouts/application
+  Rendered goals/new.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "D7ooCPo7OuFNXTenUks4og"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 101ms (Views: 38.8ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/goals/new" for 127.0.0.1 at 2018-09-14 15:41:33 -0700
+Processing by GoalsController#new as HTML
+  Rendering goals/new.html.erb within layouts/application
+  Rendered goals/new.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "D7ooCPo7OuFNXTenUks4og"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 27ms (Views: 24.9ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/goals" for 127.0.0.1 at 2018-09-14 15:42:36 -0700
+Processing by GoalsController#create as HTML
+  Parameters: {"authenticity_token"=>"VzvKuBdDCDAikhrzm4SWlinfvIOoKpjqfkfrocDkKlgVeyagZR8bxdEdP8MkJjY6t6ykbU5n/qDh7m4dDvT72w==", "goal"=>{"list_of_goal"=>"My goal is to get taller"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "D7ooCPo7OuFNXTenUks4og"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/goals_controller.rb:41
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/goals_controller.rb:41
+  [1m[36mGoal Create (37.1ms)[0m  [1m[32mINSERT INTO "goals" ("list_of_goal", "user_id") VALUES ($1, $2) RETURNING "id"[0m  [["list_of_goal", "My goal is to get taller"], ["user_id", 1]]
+  ↳ app/controllers/goals_controller.rb:41
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/goals_controller.rb:41
+Completed 500 Internal Server Error in 291ms (ActiveRecord: 50.2ms)
+
+
+
+NoMethodError - undefined method `goal_url' for #<GoalsController:0x00007fc135d03e98>
+Did you mean?  goals_url:
+  app/controllers/goals_controller.rb:42:in `create'
+
+Started POST "/__better_errors/8276753cc91b2166/variables" for 127.0.0.1 at 2018-09-14 15:42:37 -0700
+Started POST "/goals" for 127.0.0.1 at 2018-09-14 16:09:50 -0700
+Processing by GoalsController#create as HTML
+  Parameters: {"authenticity_token"=>"VzvKuBdDCDAikhrzm4SWlinfvIOoKpjqfkfrocDkKlgVeyagZR8bxdEdP8MkJjY6t6ykbU5n/qDh7m4dDvT72w==", "goal"=>{"list_of_goal"=>"My goal is to get taller"}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "D7ooCPo7OuFNXTenUks4og"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/goals_controller.rb:41
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/goals_controller.rb:41
+  [1m[36mGoal Create (0.7ms)[0m  [1m[32mINSERT INTO "goals" ("list_of_goal", "user_id") VALUES ($1, $2) RETURNING "id"[0m  [["list_of_goal", "My goal is to get taller"], ["user_id", 1]]
+  ↳ app/controllers/goals_controller.rb:41
+  [1m[35m (26.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/goals_controller.rb:41
+Redirected to http://localhost:3000/goals/2
+Completed 302 Found in 83ms (ActiveRecord: 46.6ms)
+
+
+Started GET "/goals/2" for 127.0.0.1 at 2018-09-14 16:09:50 -0700
+Processing by GoalsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "D7ooCPo7OuFNXTenUks4og"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mGoal Load (0.7ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 AND "goals"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/goals_controller.rb:18
+  Rendering goals/show.html.erb within layouts/application
+  Rendered goals/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 222ms (Views: 145.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/goals" for 127.0.0.1 at 2018-09-14 16:09:54 -0700
+Processing by GoalsController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "D7ooCPo7OuFNXTenUks4og"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  Rendering goals/index.html.erb within layouts/application
+  Rendered goals/index.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 1.2ms)
+
+
+
+NoMethodError - undefined method `user_id' for nil:NilClass:
+  app/views/goals/index.html.erb:1:in `_app_views_goals_index_html_erb__2967514778136875982_70233894230180'
+  app/controllers/goals_controller.rb:4:in `index'
+
+Started POST "/__better_errors/a6c16380fc71cbf4/variables" for 127.0.0.1 at 2018-09-14 16:09:54 -0700
+  [1m[36mGoal Load (0.5ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ /usr/local/var/rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Goal Load (0.0ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ /usr/local/var/rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Goal Load (0.0ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ /usr/local/var/rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Goal Load (0.0ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ /usr/local/var/rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Goal Load (0.0ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ /usr/local/var/rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Started POST "/__better_errors/a6c16380fc71cbf4/eval" for 127.0.0.1 at 2018-09-14 16:10:14 -0700
+Started GET "/goals" for 127.0.0.1 at 2018-09-14 16:10:48 -0700
+Processing by GoalsController#index as HTML
+  Rendering goals/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "D7ooCPo7OuFNXTenUks4og"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  Rendered goals/index.html.erb within layouts/application (18.5ms)
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 6.4ms)
+
+
+
+NoMethodError - undefined method `user_id' for nil:NilClass:
+  app/views/goals/index.html.erb:1:in `_app_views_goals_index_html_erb__2967514778136875982_70233904486800'
+  app/controllers/goals_controller.rb:4:in `index'
+
+Started POST "/__better_errors/91d25890cf585a54/variables" for 127.0.0.1 at 2018-09-14 16:10:48 -0700
+  [1m[36mGoal Load (0.6ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /usr/local/var/rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Goal Load (0.0ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /usr/local/var/rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Goal Load (0.0ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /usr/local/var/rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Goal Load (0.1ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /usr/local/var/rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Goal Load (0.0ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /usr/local/var/rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Started POST "/goals" for 127.0.0.1 at 2018-09-14 16:10:52 -0700
+Processing by GoalsController#create as HTML
+  Parameters: {"authenticity_token"=>"VzvKuBdDCDAikhrzm4SWlinfvIOoKpjqfkfrocDkKlgVeyagZR8bxdEdP8MkJjY6t6ykbU5n/qDh7m4dDvT72w==", "goal"=>{"list_of_goal"=>"My goal is to get taller"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "D7ooCPo7OuFNXTenUks4og"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/goals_controller.rb:41
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/goals_controller.rb:41
+  [1m[36mGoal Create (0.4ms)[0m  [1m[32mINSERT INTO "goals" ("list_of_goal", "user_id") VALUES ($1, $2) RETURNING "id"[0m  [["list_of_goal", "My goal is to get taller"], ["user_id", 1]]
+  ↳ app/controllers/goals_controller.rb:41
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/goals_controller.rb:41
+Redirected to http://localhost:3000/goals/3
+Completed 302 Found in 8ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/goals/3" for 127.0.0.1 at 2018-09-14 16:10:52 -0700
+Processing by GoalsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "D7ooCPo7OuFNXTenUks4og"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mGoal Load (0.7ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 AND "goals"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/goals_controller.rb:18
+  Rendering goals/show.html.erb within layouts/application
+  Rendered goals/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 139ms (Views: 133.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/goals" for 127.0.0.1 at 2018-09-14 16:10:53 -0700
+Processing by GoalsController#index as HTML
+  Rendering goals/index.html.erb within layouts/application
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "D7ooCPo7OuFNXTenUks4og"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  Rendered goals/index.html.erb within layouts/application (11.4ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 2.4ms)
+
+
+
+NoMethodError - undefined method `user_id' for nil:NilClass:
+  app/views/goals/index.html.erb:1:in `_app_views_goals_index_html_erb__2967514778136875982_70233893974500'
+  app/controllers/goals_controller.rb:4:in `index'
+
+Started POST "/__better_errors/00c921e05eb457db/variables" for 127.0.0.1 at 2018-09-14 16:10:53 -0700
+  [1m[36mGoal Load (0.4ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /usr/local/var/rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Goal Load (0.0ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /usr/local/var/rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Goal Load (0.0ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /usr/local/var/rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Goal Load (0.0ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /usr/local/var/rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Goal Load (0.0ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /usr/local/var/rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Started GET "/goals" for 127.0.0.1 at 2018-09-14 16:12:25 -0700
+Processing by GoalsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "D7ooCPo7OuFNXTenUks4og"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 404 Not Found in 110ms (ActiveRecord: 11.7ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Goal without an ID:
+  app/controllers/goals_controller.rb:4:in `index'
+
+Started POST "/__better_errors/690303fa880d71cc/variables" for 127.0.0.1 at 2018-09-14 16:12:25 -0700
+  [1m[36mGoal Load (0.4ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ /usr/local/var/rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Goal Load (0.0ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ /usr/local/var/rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Goal Load (0.0ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ /usr/local/var/rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Goal Load (0.0ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ /usr/local/var/rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Started POST "/__better_errors/690303fa880d71cc/eval" for 127.0.0.1 at 2018-09-14 16:12:36 -0700
+Started POST "/__better_errors/690303fa880d71cc/eval" for 127.0.0.1 at 2018-09-14 16:12:45 -0700
+  [1m[36mGoal Load (0.4ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ /usr/local/var/rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Started POST "/__better_errors/690303fa880d71cc/eval" for 127.0.0.1 at 2018-09-14 16:13:04 -0700
+Started GET "/goals" for 127.0.0.1 at 2018-09-14 16:13:49 -0700
+Processing by GoalsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "D7ooCPo7OuFNXTenUks4og"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mGoal Load (0.5ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 AND "goals"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/goals_controller.rb:4
+  Rendering goals/index.html.erb within layouts/application
+  [1m[36mGoal Load (0.4ms)[0m  [1m[34mSELECT "goals".* FROM "goals" WHERE "goals"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/goals/index.html.erb:3
+  Rendered goals/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 188ms (Views: 124.2ms | ActiveRecord: 12.8ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-09-14 16:14:22 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "D7ooCPo7OuFNXTenUks4og"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 38ms (Views: 36.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-09-14 16:14:31 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"lH+VfJPZVpi4a1p0q4NjnZHTIjO25V8D6m0i0B4+RZjWP3lk4YVFbUvkf0QUIcMxD6A63VCoOUl1xKds0C6UGw==", "user"=>{"username"=>"blake", "password"=>"[FILTERED]"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Create (15.0ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "blake"], ["password_digest", "$2a$10$mLsEug4JcKSZvDs/DtYFn.5ujdcaMiJqexUMszldhmGTKPNHIrxAy"], ["session_token", "6nx0w_eAdvg_zX8818R8Ig"]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (6.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:27
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1 WHERE "users"."id" = $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["id", 7]]
+  ↳ app/models/user.rb:27
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:27
+Redirected to http://localhost:3000/users/7
+Completed 302 Found in 108ms (ActiveRecord: 23.5ms)
+
+
+Started GET "/users/7" for 127.0.0.1 at 2018-09-14 16:14:31 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mGoal Load (0.6ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ app/controllers/users_controller.rb:20
+  [1m[36mCACHE Goal Load (0.0ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ app/controllers/users_controller.rb:20
+  [1m[36mCACHE Goal Load (0.0ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ app/controllers/users_controller.rb:20
+  [1m[36mCACHE Goal Load (0.0ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ app/controllers/users_controller.rb:20
+  [1m[36mCACHE Goal Load (0.0ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ app/controllers/users_controller.rb:20
+  [1m[36mCACHE Goal Load (0.0ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ app/controllers/users_controller.rb:20
+  [1m[36mCACHE Goal Load (0.0ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ app/controllers/users_controller.rb:20
+  [1m[36mCACHE Goal Load (0.0ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ app/controllers/users_controller.rb:20
+  [1m[36mCACHE Goal Load (0.0ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ app/controllers/users_controller.rb:20
+  [1m[36mCACHE Goal Load (0.0ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ app/controllers/users_controller.rb:20
+  [1m[36mCACHE Goal Load (0.0ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ app/controllers/users_controller.rb:20
+  [1m[36mCACHE Goal Load (0.0ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ app/controllers/users_controller.rb:20
+  Rendered users/show.html.erb within layouts/application (395.6ms)
+Completed 500 Internal Server Error in 432ms (ActiveRecord: 1.3ms)
+
+
+  [1m[36mCACHE Goal Load (0.0ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ /usr/local/var/rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Goal Load (0.0ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ /usr/local/var/rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Goal Load (0.0ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ /usr/local/var/rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Goal Load (0.0ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ /usr/local/var/rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Goal Load (0.0ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ /usr/local/var/rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Goal Load (0.0ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ /usr/local/var/rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+
+NameError - undefined local variable or method `new_goals_url' for #<#<Class:0x00007fc134f8a640>:0x00007fc134de1910>
+Did you mean?  new_goal_url:
+  app/views/users/show.html.erb:2:in `_app_views_users_show_html_erb__2795781438850762217_70233896190720'
+  app/controllers/users_controller.rb:20:in `show'
+
+Started POST "/__better_errors/14f17162f2e05e03/variables" for 127.0.0.1 at 2018-09-14 16:14:32 -0700
+Started POST "/__better_errors/14f17162f2e05e03/eval" for 127.0.0.1 at 2018-09-14 16:15:04 -0700
+Started GET "/users/7" for 127.0.0.1 at 2018-09-14 16:15:27 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 124ms (Views: 120.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-09-14 16:15:35 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 36ms (Views: 31.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2018-09-14 16:16:55 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+Completed 404 Not Found in 4ms (ActiveRecord: 0.9ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find User with 'id'=2:
+  app/controllers/users_controller.rb:19:in `show'
+
+Started POST "/__better_errors/001694caac7fa5dc/variables" for 127.0.0.1 at 2018-09-14 16:16:55 -0700
+Started GET "/goal/2" for 127.0.0.1 at 2018-09-14 16:17:07 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/goal/2"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/goals/2" for 127.0.0.1 at 2018-09-14 16:17:15 -0700
+Processing by GoalsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mGoal Load (0.7ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 AND "goals"."id" = $2 LIMIT $3[0m  [["user_id", 7], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/goals_controller.rb:19
+Completed 404 Not Found in 7ms (ActiveRecord: 1.4ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Goal with 'id'=2 [WHERE "goals"."user_id" = $1]:
+  app/controllers/goals_controller.rb:19:in `show'
+
+Started POST "/__better_errors/e3a9112a233a202a/variables" for 127.0.0.1 at 2018-09-14 16:17:15 -0700
+Started POST "/__better_errors/e3a9112a233a202a/eval" for 127.0.0.1 at 2018-09-14 16:17:34 -0700
+Started GET "/goals/2" for 127.0.0.1 at 2018-09-14 16:19:55 -0700
+Processing by GoalsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mGoal Load (0.4ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 AND "goals"."id" = $2 LIMIT $3[0m  [["user_id", 7], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/goals_controller.rb:20
+Completed 404 Not Found in 74ms (ActiveRecord: 12.3ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Goal with 'id'=2 [WHERE "goals"."user_id" = $1]:
+  app/controllers/goals_controller.rb:20:in `show'
+
+Started POST "/__better_errors/8f12f549b3dbcacd/variables" for 127.0.0.1 at 2018-09-14 16:19:56 -0700
+Started GET "/goal/2" for 127.0.0.1 at 2018-09-14 16:21:43 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/goal/2"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/goals/2" for 127.0.0.1 at 2018-09-14 16:22:19 -0700
+Processing by GoalsController#show as HTML
+  Parameters: {"id"=>"2"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+
+ArgumentError - wrong number of arguments (given 1, expected 0):
+  app/controllers/goals_controller.rb:57:in `not_users_page'
+  app/controllers/goals_controller.rb:19:in `show'
+
+Started POST "/__better_errors/3e4ce651e920bed6/variables" for 127.0.0.1 at 2018-09-14 16:22:20 -0700
+Started GET "/goal/2" for 127.0.0.1 at 2018-09-14 16:22:54 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/goal/2"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/goals/2" for 127.0.0.1 at 2018-09-14 16:23:47 -0700
+
+SyntaxError - syntax error, unexpected tIDENTIFIER, expecting keyword_end
+... the goals if another user."]ß
+...                             ^~:
+  app/controllers/goals_controller.rb:57:in `'
+
+Started POST "/__better_errors/9e658c619f191ffd/variables" for 127.0.0.1 at 2018-09-14 16:23:47 -0700
+Started GET "/goals/2" for 127.0.0.1 at 2018-09-14 16:24:01 -0700
+Processing by GoalsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Redirected to http://localhost:3000/users/7
+  [1m[36mGoal Load (0.5ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 AND "goals"."id" = $2 LIMIT $3[0m  [["user_id", 7], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/goals_controller.rb:20
+Completed 404 Not Found in 79ms (ActiveRecord: 11.9ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Goal with 'id'=2 [WHERE "goals"."user_id" = $1]:
+  app/controllers/goals_controller.rb:20:in `show'
+
+Started POST "/__better_errors/59856d05459d75c1/variables" for 127.0.0.1 at 2018-09-14 16:24:01 -0700
+Started GET "/users/7" for 127.0.0.1 at 2018-09-14 16:29:29 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 194ms (Views: 162.2ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/goals/2" for 127.0.0.1 at 2018-09-14 16:29:35 -0700
+Processing by GoalsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "goals"."id" FROM "goals" WHERE "goals"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/goals_controller.rb:58
+Redirected to http://localhost:3000/users/7
+Filter chain halted as :not_users_page rendered or redirected
+Completed 302 Found in 37ms (ActiveRecord: 6.3ms)
+
+
+Started GET "/users/7" for 127.0.0.1 at 2018-09-14 16:29:36 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 24ms (Views: 21.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/goals/new" for 127.0.0.1 at 2018-09-14 16:29:53 -0700
+Processing by GoalsController#new as HTML
+  Rendering goals/new.html.erb within layouts/application
+  Rendered goals/new.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 61ms (Views: 55.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/goals" for 127.0.0.1 at 2018-09-14 16:29:59 -0700
+Processing by GoalsController#create as HTML
+  Parameters: {"authenticity_token"=>"YysXC4QWzPUXhWveFze1BAn6nWj37I/J9QdcHRTGnHwha/sT9krfAOQKTu6olRWol4mFhhGh6YNqrtmh2tZN/w==", "goal"=>{"list_of_goal"=>"My goal is to graduate"}}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/goals_controller.rb:44
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/goals_controller.rb:44
+  [1m[36mGoal Create (0.8ms)[0m  [1m[32mINSERT INTO "goals" ("list_of_goal", "user_id") VALUES ($1, $2) RETURNING "id"[0m  [["list_of_goal", "My goal is to graduate"], ["user_id", 7]]
+  ↳ app/controllers/goals_controller.rb:44
+  [1m[35m (37.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/goals_controller.rb:44
+Redirected to http://localhost:3000/goals/4
+Completed 302 Found in 51ms (ActiveRecord: 40.1ms)
+
+
+Started GET "/goals/4" for 127.0.0.1 at 2018-09-14 16:29:59 -0700
+Processing by GoalsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "goals"."id" FROM "goals" WHERE "goals"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/goals_controller.rb:58
+Redirected to http://localhost:3000/users/7
+Filter chain halted as :not_users_page rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/users/7" for 127.0.0.1 at 2018-09-14 16:29:59 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 24ms (Views: 22.0ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/goals" for 127.0.0.1 at 2018-09-14 16:30:24 -0700
+Processing by GoalsController#create as HTML
+  Parameters: {"authenticity_token"=>"gtcXtwmYBvIHp0NRtYP6M0yAypUK7UKpYFvmSLV1uKzAl/uve8QVB/QoZmEKIVqf0vPSe+ygJOP/8mP0e2VpLw==", "goal"=>{"list_of_goal"=>"My goal is to graduate"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/goals_controller.rb:44
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/goals_controller.rb:44
+  [1m[36mGoal Create (0.5ms)[0m  [1m[32mINSERT INTO "goals" ("list_of_goal", "user_id") VALUES ($1, $2) RETURNING "id"[0m  [["list_of_goal", "My goal is to graduate"], ["user_id", 7]]
+  ↳ app/controllers/goals_controller.rb:44
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/goals_controller.rb:44
+Redirected to http://localhost:3000/goals/5
+Completed 302 Found in 31ms (ActiveRecord: 12.4ms)
+
+
+Started GET "/goals/5" for 127.0.0.1 at 2018-09-14 16:30:24 -0700
+Processing by GoalsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "goals"."id" FROM "goals" WHERE "goals"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/goals_controller.rb:58
+  [1m[36mGoal Load (0.5ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 AND "goals"."id" = $2 LIMIT $3[0m  [["user_id", 7], ["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/goals_controller.rb:21
+  Rendering goals/show.html.erb within layouts/application
+  Rendered goals/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 36ms (Views: 29.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/goals/5" for 127.0.0.1 at 2018-09-14 16:30:26 -0700
+Processing by GoalsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "goals"."id" FROM "goals" WHERE "goals"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/goals_controller.rb:58
+  [1m[36mGoal Load (0.7ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 AND "goals"."id" = $2 LIMIT $3[0m  [["user_id", 7], ["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/goals_controller.rb:21
+  Rendering goals/show.html.erb within layouts/application
+  Rendered goals/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 36ms (Views: 30.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/goals" for 127.0.0.1 at 2018-09-14 16:34:23 -0700
+Processing by GoalsController#index as HTML
+  [1m[36mUser Load (4.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mGoal Load (1.5ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 AND "goals"."id" = $2 LIMIT $3[0m  [["user_id", 7], ["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/goals_controller.rb:6
+  Rendering goals/index.html.erb within layouts/application
+  [1m[36mGoal Load (3.3ms)[0m  [1m[34mSELECT "goals".* FROM "goals" WHERE "goals"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/goals/index.html.erb:2
+  Rendered goals/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 57ms (Views: 42.5ms | ActiveRecord: 9.1ms)
+
+
+Started GET "/users/7" for 127.0.0.1 at 2018-09-14 16:35:09 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 28ms (Views: 24.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/goals/new" for 127.0.0.1 at 2018-09-14 16:35:11 -0700
+Processing by GoalsController#new as HTML
+  Rendering goals/new.html.erb within layouts/application
+  Rendered goals/new.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 77ms (Views: 75.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/7" for 127.0.0.1 at 2018-09-14 16:35:57 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 29ms (Views: 26.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/7" for 127.0.0.1 at 2018-09-14 16:36:03 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 29ms (Views: 26.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/7" for 127.0.0.1 at 2018-09-14 16:36:20 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 32ms (Views: 28.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users/7" for 127.0.0.1 at 2018-09-14 16:36:28 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 33ms (Views: 29.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/7" for 127.0.0.1 at 2018-09-14 16:36:35 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 32ms (Views: 29.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/7" for 127.0.0.1 at 2018-09-14 16:36:49 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 23ms (Views: 21.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/goals" for 127.0.0.1 at 2018-09-14 16:36:51 -0700
+Processing by GoalsController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mGoal Load (4.5ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 AND "goals"."id" = $2 LIMIT $3[0m  [["user_id", 7], ["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/goals_controller.rb:6
+  Rendering goals/index.html.erb within layouts/application
+  [1m[36mGoal Load (0.9ms)[0m  [1m[34mSELECT "goals".* FROM "goals" WHERE "goals"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/goals/index.html.erb:2
+  Rendered goals/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 69ms (Views: 58.1ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/goals" for 127.0.0.1 at 2018-09-14 16:37:34 -0700
+Processing by GoalsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mGoal Load (0.6ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 AND "goals"."id" = $2 LIMIT $3[0m  [["user_id", 7], ["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/goals_controller.rb:6
+  Rendering goals/index.html.erb within layouts/application
+  [1m[36mGoal Load (0.5ms)[0m  [1m[34mSELECT "goals".* FROM "goals" WHERE "goals"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/goals/index.html.erb:2
+  Rendered goals/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 32ms (Views: 26.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/users/7" for 127.0.0.1 at 2018-09-14 16:37:35 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.4ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 56ms (Views: 51.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/goals/new" for 127.0.0.1 at 2018-09-14 16:37:37 -0700
+Processing by GoalsController#new as HTML
+  Rendering goals/new.html.erb within layouts/application
+  Rendered goals/new.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 82ms (Views: 80.6ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/goals" for 127.0.0.1 at 2018-09-14 16:37:51 -0700
+Processing by GoalsController#create as HTML
+  Parameters: {"authenticity_token"=>"JDiquX916BaYDiHzx86uBi0z5KbQK5au06JsN1BhojhmeEahDSn742uBBMN4bA6qs0D8SDZm8ORMC+mLnnFzuw==", "goal"=>{"list_of_goal"=>"My goal is to be a software developer"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/goals_controller.rb:44
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/goals_controller.rb:44
+  [1m[36mGoal Create (0.7ms)[0m  [1m[32mINSERT INTO "goals" ("list_of_goal", "user_id") VALUES ($1, $2) RETURNING "id"[0m  [["list_of_goal", "My goal is to be a software developer"], ["user_id", 7]]
+  ↳ app/controllers/goals_controller.rb:44
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/goals_controller.rb:44
+Redirected to http://localhost:3000/goals/6
+Completed 302 Found in 12ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/goals/6" for 127.0.0.1 at 2018-09-14 16:37:51 -0700
+Processing by GoalsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "goals"."id" FROM "goals" WHERE "goals"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/goals_controller.rb:58
+  [1m[36mGoal Load (0.7ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 AND "goals"."id" = $2 LIMIT $3[0m  [["user_id", 7], ["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/goals_controller.rb:21
+  Rendering goals/show.html.erb within layouts/application
+  Rendered goals/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 78ms (Views: 71.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/goals/6" for 127.0.0.1 at 2018-09-14 16:38:33 -0700
+Processing by GoalsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "goals"."id" FROM "goals" WHERE "goals"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/goals_controller.rb:58
+  [1m[36mGoal Load (0.8ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 AND "goals"."id" = $2 LIMIT $3[0m  [["user_id", 7], ["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/goals_controller.rb:21
+  Rendering goals/show.html.erb within layouts/application
+  Rendered goals/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 31ms (Views: 23.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/goals/6" for 127.0.0.1 at 2018-09-14 16:38:38 -0700
+Processing by GoalsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "goals"."id" FROM "goals" WHERE "goals"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/goals_controller.rb:58
+  [1m[36mGoal Load (1.0ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 AND "goals"."id" = $2 LIMIT $3[0m  [["user_id", 7], ["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/goals_controller.rb:21
+  Rendering goals/show.html.erb within layouts/application
+  Rendered goals/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 36ms (Views: 28.4ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/goals" for 127.0.0.1 at 2018-09-14 16:38:40 -0700
+Processing by GoalsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mGoal Load (2.6ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 AND "goals"."id" = $2 LIMIT $3[0m  [["user_id", 7], ["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/goals_controller.rb:6
+  Rendering goals/index.html.erb within layouts/application
+  [1m[36mGoal Load (1.6ms)[0m  [1m[34mSELECT "goals".* FROM "goals" WHERE "goals"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/goals/index.html.erb:2
+  Rendered goals/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 55ms (Views: 45.6ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/users/7" for 127.0.0.1 at 2018-09-14 16:38:41 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 48ms (Views: 45.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/7" for 127.0.0.1 at 2018-09-14 16:40:41 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 31ms (Views: 28.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/goals" for 127.0.0.1 at 2018-09-14 16:40:44 -0700
+Processing by GoalsController#index as HTML
+  [1m[36mUser Load (6.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mGoal Load (3.2ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 AND "goals"."id" = $2 LIMIT $3[0m  [["user_id", 7], ["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/goals_controller.rb:6
+  Rendering goals/index.html.erb within layouts/application
+  [1m[36mGoal Load (0.8ms)[0m  [1m[34mSELECT "goals".* FROM "goals" WHERE "goals"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/goals/index.html.erb:2
+  Rendered goals/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 65ms (Views: 51.0ms | ActiveRecord: 10.1ms)
+
+
+Started GET "/goals" for 127.0.0.1 at 2018-09-14 16:41:25 -0700
+Processing by GoalsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mGoal Load (0.7ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 AND "goals"."id" = $2 LIMIT $3[0m  [["user_id", 7], ["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/goals_controller.rb:6
+  Rendering goals/index.html.erb within layouts/application
+  [1m[36mGoal Load (0.4ms)[0m  [1m[34mSELECT "goals".* FROM "goals" WHERE "goals"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/goals/index.html.erb:2
+  Rendered goals/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 32ms (Views: 25.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/goals/4/edit" for 127.0.0.1 at 2018-09-14 16:41:27 -0700
+Processing by GoalsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mGoal Load (2.0ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 AND "goals"."id" = $2 LIMIT $3[0m  [["user_id", 7], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/goals_controller.rb:16
+  Rendering goals/edit.html.erb within layouts/application
+  Rendered goals/edit.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 47ms (Views: 39.5ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/goals/6/edit" for 127.0.0.1 at 2018-09-14 16:41:30 -0700
+Processing by GoalsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mGoal Load (3.9ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 AND "goals"."id" = $2 LIMIT $3[0m  [["user_id", 7], ["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/goals_controller.rb:16
+  Rendering goals/edit.html.erb within layouts/application
+  Rendered goals/edit.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 50ms (Views: 38.9ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/goals/4/edit" for 127.0.0.1 at 2018-09-14 16:41:34 -0700
+Processing by GoalsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mGoal Load (4.6ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 AND "goals"."id" = $2 LIMIT $3[0m  [["user_id", 7], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/goals_controller.rb:16
+  Rendering goals/edit.html.erb within layouts/application
+  Rendered goals/edit.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 55ms (Views: 43.5ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/goals/4/edit" for 127.0.0.1 at 2018-09-14 16:41:54 -0700
+Processing by GoalsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mGoal Load (0.9ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 AND "goals"."id" = $2 LIMIT $3[0m  [["user_id", 7], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/goals_controller.rb:16
+  Rendering goals/edit.html.erb within layouts/application
+  Rendered goals/edit.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 98ms (Views: 93.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/goals" for 127.0.0.1 at 2018-09-14 16:41:59 -0700
+Processing by GoalsController#index as HTML
+  [1m[36mUser Load (6.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mGoal Load (1.9ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 AND "goals"."id" = $2 LIMIT $3[0m  [["user_id", 7], ["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/goals_controller.rb:6
+  Rendering goals/index.html.erb within layouts/application
+  [1m[36mGoal Load (0.6ms)[0m  [1m[34mSELECT "goals".* FROM "goals" WHERE "goals"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/goals/index.html.erb:2
+  Rendered goals/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 55ms (Views: 41.6ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/users/7" for 127.0.0.1 at 2018-09-14 16:42:00 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (11.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 67ms (Views: 51.5ms | ActiveRecord: 12.4ms)
+
+
+Started GET "/goals/6" for 127.0.0.1 at 2018-09-14 16:42:02 -0700
+Processing by GoalsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "goals"."id" FROM "goals" WHERE "goals"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/goals_controller.rb:58
+  [1m[36mGoal Load (0.9ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 AND "goals"."id" = $2 LIMIT $3[0m  [["user_id", 7], ["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/goals_controller.rb:21
+  Rendering goals/show.html.erb within layouts/application
+  Rendered goals/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 64ms (Views: 52.5ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/users/7" for 127.0.0.1 at 2018-09-14 16:42:05 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 52ms (Views: 46.7ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/goals" for 127.0.0.1 at 2018-09-14 16:42:06 -0700
+Processing by GoalsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mGoal Load (4.1ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 AND "goals"."id" = $2 LIMIT $3[0m  [["user_id", 7], ["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/goals_controller.rb:6
+  Rendering goals/index.html.erb within layouts/application
+  [1m[36mGoal Load (2.2ms)[0m  [1m[34mSELECT "goals".* FROM "goals" WHERE "goals"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/goals/index.html.erb:2
+  Rendered goals/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 55ms (Views: 44.0ms | ActiveRecord: 7.1ms)
+
+
+Started GET "/goals" for 127.0.0.1 at 2018-09-14 16:43:17 -0700
+Processing by GoalsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mGoal Load (0.6ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 AND "goals"."id" = $2 LIMIT $3[0m  [["user_id", 7], ["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/goals_controller.rb:6
+  Rendering goals/index.html.erb within layouts/application
+  [1m[36mGoal Load (0.7ms)[0m  [1m[34mSELECT "goals".* FROM "goals" WHERE "goals"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/goals/index.html.erb:2
+  Rendered goals/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 144ms (Views: 138.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/goals" for 127.0.0.1 at 2018-09-14 16:43:26 -0700
+Processing by GoalsController#index as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mGoal Load (4.3ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 AND "goals"."id" = $2 LIMIT $3[0m  [["user_id", 7], ["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/goals_controller.rb:6
+  Rendering goals/index.html.erb within layouts/application
+  [1m[36mGoal Load (5.0ms)[0m  [1m[34mSELECT "goals".* FROM "goals" WHERE "goals"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/goals/index.html.erb:2
+  Rendered goals/index.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 71ms (Views: 54.1ms | ActiveRecord: 11.1ms)
+
+
+Started GET "/goals/6/edit" for 127.0.0.1 at 2018-09-14 16:43:28 -0700
+Processing by GoalsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mGoal Load (2.4ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 AND "goals"."id" = $2 LIMIT $3[0m  [["user_id", 7], ["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/goals_controller.rb:16
+  Rendering goals/edit.html.erb within layouts/application
+  Rendered goals/edit.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 51ms (Views: 42.1ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/goals" for 127.0.0.1 at 2018-09-14 16:44:08 -0700
+Processing by GoalsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mGoal Load (0.8ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 AND "goals"."id" = $2 LIMIT $3[0m  [["user_id", 7], ["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/goals_controller.rb:6
+  Rendering goals/index.html.erb within layouts/application
+  [1m[36mGoal Load (0.4ms)[0m  [1m[34mSELECT "goals".* FROM "goals" WHERE "goals"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/goals/index.html.erb:2
+  Rendered goals/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 33ms (Views: 26.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/goals" for 127.0.0.1 at 2018-09-14 16:44:15 -0700
+Processing by GoalsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mGoal Load (0.8ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 AND "goals"."id" = $2 LIMIT $3[0m  [["user_id", 7], ["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/goals_controller.rb:6
+  Rendering goals/index.html.erb within layouts/application
+  [1m[36mGoal Load (0.4ms)[0m  [1m[34mSELECT "goals".* FROM "goals" WHERE "goals"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/goals/index.html.erb:2
+  Rendered goals/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 34ms (Views: 28.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/goals/4" for 127.0.0.1 at 2018-09-14 16:44:17 -0700
+Processing by GoalsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[35m (5.1ms)[0m  [1m[34mSELECT "goals"."id" FROM "goals" WHERE "goals"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/goals_controller.rb:58
+  [1m[36mGoal Load (3.0ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 AND "goals"."id" = $2 LIMIT $3[0m  [["user_id", 7], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/goals_controller.rb:21
+  Rendering goals/show.html.erb within layouts/application
+  Rendered goals/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 66ms (Views: 50.6ms | ActiveRecord: 8.5ms)
+
+
+Started GET "/goals/4" for 127.0.0.1 at 2018-09-14 16:44:41 -0700
+Processing by GoalsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "goals"."id" FROM "goals" WHERE "goals"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/goals_controller.rb:58
+  [1m[36mGoal Load (0.9ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 AND "goals"."id" = $2 LIMIT $3[0m  [["user_id", 7], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/goals_controller.rb:21
+  Rendering goals/show.html.erb within layouts/application
+  Rendered goals/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 77ms (Views: 28.2ms | ActiveRecord: 13.8ms)
+
+
+Started GET "/goals" for 127.0.0.1 at 2018-09-14 16:44:45 -0700
+Processing by GoalsController#index as HTML
+  [1m[36mUser Load (7.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mGoal Load (0.8ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 AND "goals"."id" = $2 LIMIT $3[0m  [["user_id", 7], ["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/goals_controller.rb:6
+  Rendering goals/index.html.erb within layouts/application
+  [1m[36mGoal Load (1.6ms)[0m  [1m[34mSELECT "goals".* FROM "goals" WHERE "goals"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/goals/index.html.erb:2
+  Rendered goals/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 62ms (Views: 47.1ms | ActiveRecord: 9.6ms)
+
+
+Started GET "/goals" for 127.0.0.1 at 2018-09-14 16:46:40 -0700
+Processing by GoalsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mGoal Load (0.6ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 AND "goals"."id" = $2 LIMIT $3[0m  [["user_id", 7], ["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/goals_controller.rb:6
+  Rendering goals/index.html.erb within layouts/application
+  [1m[36mGoal Load (0.4ms)[0m  [1m[34mSELECT "goals".* FROM "goals" WHERE "goals"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/goals/index.html.erb:2
+  Rendered goals/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 29ms (Views: 24.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/goals/4/edit" for 127.0.0.1 at 2018-09-14 16:46:42 -0700
+Processing by GoalsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mGoal Load (6.3ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 AND "goals"."id" = $2 LIMIT $3[0m  [["user_id", 7], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/goals_controller.rb:16
+  Rendering goals/edit.html.erb within layouts/application
+  Rendered goals/edit.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 80ms (Views: 68.1ms | ActiveRecord: 6.7ms)
+
+
+Started DELETE "/goals/4" for 127.0.0.1 at 2018-09-14 16:46:43 -0700
+Processing by GoalsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"afTSOddMM7FOhtgwzuUwU+6M7xes3xxtZcyIUAHTddArtD4hpRAgRL0J/QBxR5D/cP/3+UqSeif6ZQ3sz8OkUw==", "id"=>"4"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mGoal Load (0.7ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 AND "goals"."id" = $2 LIMIT $3[0m  [["user_id", 7], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/goals_controller.rb:36
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/goals_controller.rb:37
+  [1m[36mGoal Destroy (0.6ms)[0m  [1m[31mDELETE FROM "goals" WHERE "goals"."id" = $1[0m  [["id", 4]]
+  ↳ app/controllers/goals_controller.rb:37
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/goals_controller.rb:37
+Completed 500 Internal Server Error in 287ms (ActiveRecord: 2.9ms)
+
+
+
+NameError - undefined local variable or method `goals_index' for #<GoalsController:0x00007fc137868300>
+Did you mean?  goals_url:
+  app/controllers/goals_controller.rb:38:in `destroy'
+
+Started POST "/__better_errors/aed13c973539b109/variables" for 127.0.0.1 at 2018-09-14 16:46:44 -0700
+Started GET "/goals/4/edit" for 127.0.0.1 at 2018-09-14 16:47:03 -0700
+Processing by GoalsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mGoal Load (0.4ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 AND "goals"."id" = $2 LIMIT $3[0m  [["user_id", 7], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/goals_controller.rb:16
+Completed 404 Not Found in 40ms (ActiveRecord: 11.7ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Goal with 'id'=4 [WHERE "goals"."user_id" = $1]:
+  app/controllers/goals_controller.rb:16:in `edit'
+
+Started POST "/__better_errors/75a9da06348a1a01/variables" for 127.0.0.1 at 2018-09-14 16:47:03 -0700
+Started GET "/goals" for 127.0.0.1 at 2018-09-14 16:47:08 -0700
+Processing by GoalsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mGoal Load (1.0ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 AND "goals"."id" = $2 LIMIT $3[0m  [["user_id", 7], ["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/goals_controller.rb:6
+  Rendering goals/index.html.erb within layouts/application
+  [1m[36mGoal Load (0.5ms)[0m  [1m[34mSELECT "goals".* FROM "goals" WHERE "goals"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/goals/index.html.erb:2
+  Rendered goals/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 39ms (Views: 31.1ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/goals" for 127.0.0.1 at 2018-09-14 16:47:11 -0700
+Processing by GoalsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mGoal Load (0.8ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 AND "goals"."id" = $2 LIMIT $3[0m  [["user_id", 7], ["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/goals_controller.rb:6
+  Rendering goals/index.html.erb within layouts/application
+  [1m[36mGoal Load (0.4ms)[0m  [1m[34mSELECT "goals".* FROM "goals" WHERE "goals"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/goals/index.html.erb:2
+  Rendered goals/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 33ms (Views: 27.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/goals/5/edit" for 127.0.0.1 at 2018-09-14 16:47:13 -0700
+Processing by GoalsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mGoal Load (3.4ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 AND "goals"."id" = $2 LIMIT $3[0m  [["user_id", 7], ["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/goals_controller.rb:16
+  Rendering goals/edit.html.erb within layouts/application
+  Rendered goals/edit.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 51ms (Views: 41.4ms | ActiveRecord: 4.1ms)
+
+
+Started DELETE "/goals/5" for 127.0.0.1 at 2018-09-14 16:47:14 -0700
+Processing by GoalsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"fAI0LXl8ulm8nDgkIhagw5X5q/y9aGlHj3Gl5V09xx0+Qtg1CyCprE8THRSdtABvC4qzElslDw0Q2CBZky0Wng==", "id"=>"5"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mGoal Load (0.8ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 AND "goals"."id" = $2 LIMIT $3[0m  [["user_id", 7], ["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/goals_controller.rb:36
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/goals_controller.rb:37
+  [1m[36mGoal Destroy (0.9ms)[0m  [1m[31mDELETE FROM "goals" WHERE "goals"."id" = $1[0m  [["id", 5]]
+  ↳ app/controllers/goals_controller.rb:37
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/goals_controller.rb:37
+Completed 500 Internal Server Error in 247ms (ActiveRecord: 3.1ms)
+
+
+
+NameError - undefined local variable or method `goals_index' for #<GoalsController:0x00007fc135f6f970>
+Did you mean?  goals_url:
+  app/controllers/goals_controller.rb:38:in `destroy'
+
+Started POST "/__better_errors/10c750a873f29fde/variables" for 127.0.0.1 at 2018-09-14 16:47:15 -0700
+Started GET "/goals" for 127.0.0.1 at 2018-09-14 16:47:26 -0700
+Processing by GoalsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mGoal Load (0.6ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 AND "goals"."id" = $2 LIMIT $3[0m  [["user_id", 7], ["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/goals_controller.rb:6
+  Rendering goals/index.html.erb within layouts/application
+  [1m[36mGoal Load (0.3ms)[0m  [1m[34mSELECT "goals".* FROM "goals" WHERE "goals"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/goals/index.html.erb:2
+  Rendered goals/index.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 105ms (Views: 45.5ms | ActiveRecord: 14.7ms)
+
+
+Started GET "/goals/6/edit" for 127.0.0.1 at 2018-09-14 16:47:27 -0700
+Processing by GoalsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mGoal Load (5.0ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 AND "goals"."id" = $2 LIMIT $3[0m  [["user_id", 7], ["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/goals_controller.rb:16
+  Rendering goals/edit.html.erb within layouts/application
+  Rendered goals/edit.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 64ms (Views: 49.5ms | ActiveRecord: 5.4ms)
+
+
+Started DELETE "/goals/6" for 127.0.0.1 at 2018-09-14 16:47:29 -0700
+Processing by GoalsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Dj6eAd3fiarfiJc/qiG/GlPu5SlliAtBWbb1PRYjqv1MfnIZr4OaXywHsg8Vgx+2zZ39x4PFbQvGH3CB2DN7fg==", "id"=>"6"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mGoal Load (0.8ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 AND "goals"."id" = $2 LIMIT $3[0m  [["user_id", 7], ["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/goals_controller.rb:36
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/goals_controller.rb:37
+  [1m[36mGoal Destroy (0.7ms)[0m  [1m[31mDELETE FROM "goals" WHERE "goals"."id" = $1[0m  [["id", 6]]
+  ↳ app/controllers/goals_controller.rb:37
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/goals_controller.rb:37
+Redirected to http://localhost:3000/goals
+Completed 302 Found in 11ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/goals" for 127.0.0.1 at 2018-09-14 16:47:29 -0700
+Processing by GoalsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mGoal Load (0.6ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 AND "goals"."id" = $2 LIMIT $3[0m  [["user_id", 7], ["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/goals_controller.rb:6
+  Rendering goals/index.html.erb within layouts/application
+  [1m[36mGoal Load (0.4ms)[0m  [1m[34mSELECT "goals".* FROM "goals" WHERE "goals"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/goals/index.html.erb:2
+  Rendered goals/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 39ms (Views: 33.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/users/7" for 127.0.0.1 at 2018-09-14 16:47:33 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "esIotdf713FluXWLWdXdFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 50ms (Views: 43.9ms | ActiveRecord: 1.1ms)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3326608677441972405)[0m
+  ↳ bin/rails:9
+  [1m[35m (20.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateUserComment (20180914235939)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (36.1ms)[0m  [1m[35mCREATE TABLE "user_comments" ("id" bigserial primary key, "body" character varying NOT NULL)[0m
+  ↳ db/migrate/20180914235939_create_user_comment.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180914235939"]]
+  ↳ bin/rails:9
+  [1m[35m (16.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateGoalComments (20180914235947)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (19.5ms)[0m  [1m[35mCREATE TABLE "goal_comments" ("id" bigserial primary key, "body" character varying NOT NULL)[0m
+  ↳ db/migrate/20180914235947_create_goal_comments.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180914235947"]]
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(3326608677441972405)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9

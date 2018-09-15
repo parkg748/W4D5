@@ -1,0 +1,8 @@
+<ul>
+  <% @goals.each do |goal| %>
+    <li><%= goal.list_of_goal %></li>
+    <a href="<%= edit_goal_url(goal) %>">Edit Goal</a>
+  <% end %>
+</ul>
+<br>
+<a href="<%= user_url(current_user) %>">Go to Your Profile</a>

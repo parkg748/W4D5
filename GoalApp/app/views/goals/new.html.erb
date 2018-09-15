@@ -1,0 +1,7 @@
+<h1>Write Your Goals</h1>
+<form action="<%= goals_url %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <textarea name="goal[list_of_goal]"></textarea>
+  <br>
+  <input type="submit" name="" value="Create Goal">
+</form>
